@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.headContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 120px;
+  height: 4rem;
+  border-bottom: 1px solid hsl(0, 0%, 82%);
+}
+
+.headLeft {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 40px;
+}
+
+.logo {
+  margin: 0 30px;
+}
+
+.list {
+  margin: 0 50px;
+}
+
+.menuContainer {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.menuContainer li {
+  margin: 0 10px;
+  color: hsl(0, 0%, 51%);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.menuContainer li:hover {
+  border-bottom: 3px solid hsl(26, 100%, 55%);
+  margin-bottom: -47px;
+}
+
+.headRight {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -1rem;
+}
+
+.cartImage {
+  position: relative;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: center;
+  border-radius: 100px;
+  width: 20px;
+  height: 15px;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(26, 100%, 55%);
+  position: absolute;
+  right: 10px;
+  top: 4px;
+}
+
+.cartImage p {
+  font-size: 10px;
+  margin: auto;
+}
+
+.cartImage .cart {
+  height: 3rem;
+  border-radius: 100px;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.userImage img {
+  height: 3rem;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.userImage img:hover {
+  border: 2px solid hsl(26, 100%, 55%);
+  border-radius: 100px;
+}
