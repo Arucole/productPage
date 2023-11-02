@@ -8,7 +8,8 @@
 
 .bodyContainer {
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
 }
 
@@ -17,13 +18,18 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  margin: auto;
 }
 
 .slide {
   border-radius: 1rem;
   box-shadow: 0px 0px 7px #666;
-  width: 350px;
-  height: 400px;
+  width: 450px;
+  height: 500px;
+}
+
+.slide-hidden {
+  display: none;
 }
 
 .arrow {
@@ -42,9 +48,9 @@
   left: 0.5rem;
 }
 
-/* .arrow-right {
+.arrow-right {
   right: 0.5rem;
-} */
+}
 
 .indicatorImage {
   display: flex;
@@ -54,19 +60,134 @@
 }
 
 .thumbnailImage {
-  height: 80px;
-  width: 80px;
+  height: 90px;
+  width: 90px;
   border-radius: 1rem;
   box-shadow: 0px 0px 7px #666;
-  margin: 0 10px;
+  margin: 0 15px;
 }
 
 .thumbnailImage:hover {
   border: 1px solid hsl(26, 100%, 55%);
   cursor: pointer;
+  filter: opacity(70%);
+}
+
+.thumbnail-inactive {
+  filter: opacity(70%);
 }
 
 .cartDetail {
-  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 500px;
   width: 400px;
+  margin: auto;
+}
+
+.cartDetail h3 {
+  color: hsl(26, 100%, 55%);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+.cartDetail h2 {
+  width: 400px;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.productDetail {
+  font-size: 14px;
+  color: hsl(0, 0%, 51%);
+  line-height: 20px;
+  margin-bottom: 30px;
+}
+
+.priceDetail {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 25px;
+  font-weight: 700;
+  margin-right: 15px;
+}
+
+.discounttag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(26, 100%, 55%);
+  background: hsl(25, 100%, 94%);
+  width: 30px;
+  height: 17px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.discount {
+  align-items: center;
+  position: absolute;
+  font-size: 13px;
+  margin: auto;
+}
+
+.priceLine {
+  color: hsl(0, 0%, 51%);
+  text-decoration: line-through;
+}
+
+.regulation {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.keyReg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: linear-gradient(to left, rgb(226, 226, 226), rgb(221, 221, 221));
+  width: 100px;
+  height: 50px;
+  border: none;
+}
+
+.regBtn {
+  color: hsl(26, 100%, 55%);
+  cursor: pointer;
+}
+
+.cartBtn {
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(26, 100%, 55%);
+  color: white;
+  height: 50px;
+  width: 250px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.cartBtn:hover {
+  background-color: hsl(25, 100%, 94%);
+  transition: 10ms ease-in;
+  color: hsl(0, 0%, 64%);
+}
+
+.Btn {
+  margin: 10px;
+  font-size: 14px;
 }
