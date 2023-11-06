@@ -165,6 +165,8 @@
 .regBtn {
   color: hsl(26, 100%, 55%);
   cursor: pointer;
+  border: none;
+  background: linear-gradient(to left, rgb(226, 226, 226), rgb(221, 221, 221));
 }
 
 .cartBtn {
@@ -187,7 +189,6 @@
   color: hsl(0, 0%, 64%);
 }
 
-.Btn {
-  margin: 10px;
-  font-size: 14px;
+.cartLogo {
+  margin-right: 10px;
 }

@@ -1,55 +1,41 @@
 import React, { useState } from "react";
 import "./Body.css";
-import imageProduct from "../images/imageProduct.jpg";
-import imageProduct2 from "../images/imageProduct2.jpg";
-import imageProduct3 from "../images/imageProduct3.jpg";
-import imageProduct4 from "../images/imageProduct4.jpg";
-import imageProductThumbnail from "../images/imageProductThumbnail.jpg";
-import imageProductThumbnail2 from "../images/imageProductThumbnail2.jpg";
-import imageProductThumbnail3 from "../images/imageProductThumbnail3.jpg";
-import imageProductThumbnail4 from "../images/imageProductThumbnail4.jpg";
+import data from "./data.js";
 import { BsArrowLeftCircle, BsArrowRightCircle, BsCart3 } from "react-icons/bs";
 
-function Body() {
-  const displayImages = [
-    {
-      id: 0,
-      image: imageProduct,
-      thumbnail: imageProductThumbnail,
-    },
-    {
-      id: 1,
-      image: imageProduct2,
-      thumbnail: imageProductThumbnail2,
-    },
-    {
-      id: 2,
-      image: imageProduct3,
-      thumbnail: imageProductThumbnail3,
-    },
-    {
-      id: 3,
-      image: imageProduct4,
-      thumbnail: imageProductThumbnail4,
-    },
-  ];
-
+function Body({ addToCart }) {
   const [slide, setSlide] = useState(0);
-  const [number, setNumber] = useState(0);
+  const [quantity, setQuantity] = useState(0);
+
+  const addToCartSubmit = () => {
+    addToCart(data.displayImages);
+  };
 
   const nextSlide = () => {
-    setSlide(slide === displayImages.length - 1 ? 0 : slide + 1);
+    setSlide(slide === data.displayImages.length - 1 ? 0 : slide + 1);
   };
 
   const prevSlide = () => {
-    setSlide(slide === 0 ? displayImages.length - 1 : slide - 1);
+    setSlide(slide === 0 ? data.displayImages.length - 1 : slide - 1);
+  };
+
+  const decrease = () => {
+    if (quantity > 0) {
+      setQuantity((prevCount) => prevCount - 1);
+    }
+  };
+
+  const increase = () => {
+    if (quantity < 100) {
+      setQuantity((prevCount) => prevCount + 1);
+    }
   };
 
   return (
     <div className="bodyContainer">
       <div className="carousel">
         <BsArrowLeftCircle className="arrow arrow-left" onClick={prevSlide} />
-        {displayImages.map((item, id) => (
+        {data.displayImages.map((item, id) => (
           <img
             src={item.image}
             alt="Product Image"
@@ -59,7 +45,7 @@ function Body() {
         ))}
         <BsArrowRightCircle className="arrow arrow-right" onClick={nextSlide} />
         <span className="indicatorImage">
-          {displayImages.map((item, id) => (
+          {data.displayImages.map((item, id) => (
             <img
               src={item.thumbnail}
               alt="Product Image"
@@ -92,17 +78,19 @@ function Body() {
         <p className="priceLine">$250.00</p>
         <div className="regulation">
           <div className="keyReg">
-            <p className="regBtn">-</p>
-            <p>0</p>
-            <p className="regBtn">+</p>
+            <button className="regBtn" onClick={decrease}>
+              -
+            </button>
+            <p>{quantity}</p>
+            <button className="regBtn" onClick={increase}>
+              +
+            </button>
           </div>
-          <div className="cartBtn">
-            <div className="Btn">
-              {" "}
-              <BsCart3 />
-              Add To Cart
-            </div>
-          </div>
+
+          <button className="cartBtn" onClick={addToCartSubmit}>
+            <BsCart3 className="cartLogo" />
+            Add To Cart
+          </button>
         </div>
       </div>
     </div>

@@ -4,6 +4,8 @@ import { BsCart3 } from "react-icons/bs";
 import logo from "../images/logo.svg";
 import imageAvatar from "../images/imageAvatar.png";
 
+//, RiDeleteBin5Line, quantity
+
 function Header() {
   return (
     <div className="headContainer">
@@ -28,6 +30,19 @@ function Header() {
           </div>
           <BsCart3 className="cart" />
         </div>
+        {/* <div className="itemDropDown"> 
+          <h3>Cart</h3>
+          <hr/>
+          <div className="itemList">
+            <img src={} />
+            <div className="itemAndQuantity">
+             <p>Fall Limited Edition Sneakers</p>
+             <p>$125.00 * {quantity} = {totalPrice}</p>
+             <RiDeleteBin5Line/>
+            </div>
+           <button>Check Out</button>
+          </div> 
+        </div> */}
         <div className="userImage">
           <img src={imageAvatar} alt="userImage" />
         </div>
