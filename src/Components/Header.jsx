@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import { BsCart3 } from "react-icons/bs";
+import { GiHamburgerMenu } from "react-icons/gi";
 import logo from "../images/logo.svg";
 import imageAvatar from "../images/imageAvatar.png";
 
-//, RiDeleteBin5Line, quantity
-
 function Header() {
+  const [active, setActive] = useState(false);
+
   return (
     <div className="headContainer">
       <div className="headLeft">
+        <div
+          className="active activeHamburger hamburger"
+          onClick={() => setActive(!active)}
+        >
+          <GiHamburgerMenu />
+        </div>
         <div className="logo">
           <img src={logo} alt="logo" />
         </div>
